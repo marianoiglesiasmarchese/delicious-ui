@@ -5,8 +5,9 @@ class Header extends React.Component{
         return (
             <header className="App-header">
             <p>
-              Edit <code>src/App.js</code> and save to reload.
+              Delicious
             </p>
+            {/** Options/Menu */}
           </header>
         )
     }

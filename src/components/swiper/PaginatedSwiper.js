@@ -5,7 +5,11 @@ import SwiperElement from './SwiperElement';
 class PaginatedSwiper extends React.Component {
   params = {
     lazy: true,
-    clickable: true,
+    // be careful with autoplay functionality because it works in a loop
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
@@ -14,15 +18,16 @@ class PaginatedSwiper extends React.Component {
 
   render() { 
     return(
-      <div style={{padding: '25px 50px 75px 100px'}} >
+      <div style={{padding: '25px'}} >        
+
         <Swiper {...this.params}>
-          {/** we should use props to send the values, even to make it dynamic */}
-          <div>
-          <SwiperElement imageName="image URL" numeroDeImagen={1} nueva={true} />  
-          </div>
-          <div>
-          <SwiperElement/>  
-          </div>
+    
+          {this.props.recipes.map(each =>           
+            <div>
+              <SwiperElement key={each.id} recipe={each} />      
+            </div>
+          )}
+      
         </Swiper>
       </div>
     );

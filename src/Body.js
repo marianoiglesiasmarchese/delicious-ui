@@ -6,9 +6,10 @@ import "react-id-swiper/lib/styles/css/swiper.css";
 class Body extends React.Component{
     render() {
         return (
-            
-            <PaginatedSwiper/>  
-            
+            <>
+            {/** <button onClick={this.props.addRecipe}/> */}  
+            <PaginatedSwiper recipes={this.props.recipes}/>  
+            </>
         )
     }
 }

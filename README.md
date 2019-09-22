@@ -1,3 +1,11 @@
+## Delicious UI
+
+### Branching strategy
+
+https://nvie.com/posts/a-successful-git-branching-model/
+
+______
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

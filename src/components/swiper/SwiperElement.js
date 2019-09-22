@@ -1,6 +1,6 @@
 import React from 'react';
 // Importing external functions
-import { throwAlert } from '../../Utils';
+// import { throwAlert } from '../../Utils';
 import { withRouter } from 'react-router-dom';
 
 class SwiperElement extends React.Component {
@@ -16,7 +16,7 @@ class SwiperElement extends React.Component {
   clickMe = () => {
     const imageName = this.imageRef.current.key; 
     console.log(imageName);
-    this.props.history.push(`/recipes/${this.props.recipe.id}`);
+    this.props.history.push(`/recipe/${this.props.recipe.id}`);
   }
 
   variable = () => {
@@ -31,9 +31,9 @@ class SwiperElement extends React.Component {
         <div onClick={this.clickMe}>
           {/** <div onClick={this.callEvent()}></div> => if we use the parentesis we are calling the method when the app starts, this behavior respons upper question */}
             
-          <h3> {title} </h3>
+          <h4> {title} </h4>
 
-          <img className="swiper-lazy" ref={this.imageRef} alt={title} data-src={image} width="1024" height="720" />          
+          <img className="swiper-lazy" ref={this.imageRef} alt={title} data-src={image} width="1280" height="600" />          
           
           <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
           

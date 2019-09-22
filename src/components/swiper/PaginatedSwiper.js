@@ -23,8 +23,8 @@ class PaginatedSwiper extends React.Component {
         <Swiper {...this.params}>
     
           {this.props.recipes.map(each =>           
-            <div>
-              <SwiperElement key={each.id} recipe={each} />      
+            <div key={each.id}>
+              <SwiperElement recipe={each} />      
             </div>
           )}
       

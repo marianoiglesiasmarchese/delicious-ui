@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
+import '../css/App.css';
 
 import Header from './Header';
 import Body from './Body';
 import Footer from './Footer';
 
-import objectSampleRecipes from "./ObjectSampleRecipes"
-import arraySampleRecipes from "./ArraySampleRecipes"
+import objectSampleRecipes from "../data/ObjectSampleRecipes"
+import arraySampleRecipes from "../data/ArraySampleRecipes"
 
 class App extends React.Component {
 

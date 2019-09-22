@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import App from './App';
-import NotFound from './NotFound';
-import About from './About';
-import CreateRecipe from './CreateRecipe';
-import Profile from './Profile';
-import Login from './Login';
-import Recipes from './Recipes';
+import App from './components/App';
+import NotFound from './components/NotFound';
+import About from './components/About';
+import CreateRecipe from './components/CreateRecipe';
+import Profile from './components/Profile';
+import Login from './components/Login';
+import Recipes from './components/Recipes';
 
 const Router = () => (
 

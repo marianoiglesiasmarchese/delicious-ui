@@ -1,9 +1,18 @@
 import React from 'react';
+import PropTypes from "prop-types";
 // Importing external functions
 // import { throwAlert } from '../../Utils';
 import { withRouter } from 'react-router-dom';
 
 class SwiperElement extends React.Component {
+
+  static propTypes = {
+    recipe: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.object.isRequired    
+    })
+  }
 
   // using references like this we can access to a internal component from a function.
   imageRef = React.createRef();

@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './components/App';
 import NotFound from './components/NotFound';
 import About from './components/About';
-import CreateRecipe from './components/CreateRecipe';
+import CreateRecipe from './components/recipe/CreateRecipe';
 import Profile from './components/Profile';
 import Login from './components/Login';
-import Recipes from './components/Recipes';
+import Recipes from './components/recipe/Recipes';
 
 const Router = () => (
 

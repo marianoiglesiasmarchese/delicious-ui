@@ -9,8 +9,7 @@ class SwiperElement extends React.Component {
   static propTypes = {
     recipe: PropTypes.shape({
       title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      image: PropTypes.object.isRequired    
+      description: PropTypes.string.isRequired    
     })
   }
 

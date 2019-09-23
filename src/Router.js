@@ -1,28 +1,25 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import App from './components/App';
-import NotFound from './components/NotFound';
-import About from './components/About';
-import CreateRecipe from './components/recipe/CreateRecipe';
-import Profile from './components/Profile';
-import Login from './components/Login';
-import Recipes from './components/recipe/Recipes';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+
+import Home from "./components/Home";
+import CreateRecipe from "./components/recipe/CreateRecipe";
+import Recipes from "./components/recipe/Recipes";
+import Login from "./components/Login";
+import Profile from "./components/Profile";
+import About from "./components/About";
+import NotFound from "./components/NotFound";
 
 const Router = () => (
-
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={App} />
-            <Route exact path="/recipe/new" component={CreateRecipe} /> 
-            <Route exact path="/recipe/:id" component={CreateRecipe} /> 
-            <Route exact path="/recipes" component={Recipes} /> 
-            <Route exact path="/login" component={Login} /> 
-            <Route exact path="/profile" component={Profile} />         
-            <Route exact path="/about" component={About} /> 
-            <Route component={NotFound} />
-        </Switch>
-    </BrowserRouter>
-
+  <Switch>
+    <Route exact path="/" component={Home} />
+    <Route exact path="/recipe/new" component={CreateRecipe} />
+    <Route exact path="/recipe/:id" component={CreateRecipe} />
+    <Route exact path="/recipes" component={Recipes} />
+    <Route exact path="/login" component={Login} />
+    <Route exact path="/profile" component={Profile} />
+    <Route exact path="/about" component={About} />
+    <Route component={NotFound} />
+  </Switch>
 );
 
 export default Router;

@@ -9,7 +9,7 @@ class RecipeElement extends React.Component{
             <label> name </label>
             {/** Five stars component */}
             <p> description </p>
-            <a href="#"> social network link </a>
+            <a href="/"> social network link </a>
             </>
         )
     }

@@ -42,7 +42,7 @@ class Home extends React.Component {
   }
 
   params = {
-    lazy: true,
+    // lazy: true,
     // be careful with autoplay functionality because it works in a loop
     autoplay: {
       delay: 2500,
@@ -56,21 +56,23 @@ class Home extends React.Component {
 
   render() {
     return (
-      <Swiper style={{ padding: "25px" }} {...this.params}>
-        
-        {/**
-          <ul>
-            {this.state.arrayRecipe.map(each => <p key={each.id} object={each}> {each.title} </p>)} 
-            {Object.keys(this.state.objectRecipe).map(key => <p key={key} object={this.state.objectRecipe[key]}> {key} </p>)}  
-          </ul> 
-        */}
+      <div align="center"  >
+        <Swiper  {...this.params}>
+          
+          {/**
+            <ul>
+              {this.state.arrayRecipe.map(each => <p key={each.id} object={each}> {each.title} </p>)} 
+              {Object.keys(this.state.objectRecipe).map(key => <p key={key} object={this.state.objectRecipe[key]}> {key} </p>)}  
+            </ul> 
+          */}
 
-        {this.state.arrayRecipe.map(each => (
-          <div key={each.id}>
-            <SwiperElement recipe={each} />
-          </div>
-        ))}
-      </Swiper>
+          {this.state.arrayRecipe.map(each => (
+            <div key={each.id}>
+              <SwiperElement recipe={each} />
+            </div>
+          ))}
+        </Swiper> 
+      </div>
     );
   }
 }

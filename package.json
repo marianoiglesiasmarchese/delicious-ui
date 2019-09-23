@@ -9,6 +9,7 @@
     "react-mdl": "^1.11.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
+    "react-star-ratings": "^2.3.0",
     "swiper": "^4.5.0"
   },
   "scripts": {

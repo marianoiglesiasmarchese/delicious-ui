@@ -5,7 +5,7 @@ import Router from "../Router";
 import { Layout, Header, Navigation, Drawer, Content, Footer, FooterSection, FooterLinkList } from "react-mdl";
 
 class App extends React.Component {
-  
+
   appName = "Delicious";
 
   render() {
@@ -14,18 +14,20 @@ class App extends React.Component {
         <Layout>
           <Header title={this.appName} scroll>
             <Navigation>
-              <Link to="/">Link</Link>
-              <Link to="/">Link</Link>
+              <Link to="/recipes">Recipes</Link>
+              <Link to="/recipe/new">Create recipe</Link>
               <Link to="/profile">Profile</Link>
               <Link to="/about">About</Link>
+              <Link to="/login">Login</Link>
             </Navigation>
           </Header>
           <Drawer title={this.appName}>
             <Navigation>
-              <Link to="/">Link</Link>
-              <Link to="/">Link</Link>
+              <Link to="/recipes">Recipes</Link>
+              <Link to="/recipe/new">Create recipe</Link>
               <Link to="/profile">Profile</Link>
               <Link to="/about">About</Link>
+              <Link to="/login">Login</Link>
             </Navigation>
           </Drawer>
           <Content>
@@ -33,6 +35,7 @@ class App extends React.Component {
               <Router />
             </div>
           </Content>
+          
           <Footer size="mini">
             <FooterSection type="left" logo="footer">
               <FooterLinkList>
@@ -40,7 +43,7 @@ class App extends React.Component {
                 <Link to="/">Privacy & Terms</Link>
               </FooterLinkList>
             </FooterSection>
-          </Footer>
+          </Footer>  
         </Layout>
       </div>
     );

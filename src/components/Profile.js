@@ -1,42 +1,87 @@
 import React from "react";
 
+import { Textfield, Button } from "react-mdl";
+
 class Profile extends React.Component{
 
-    input1 = React.createRef();
-    input2 = React.createRef();
-    input3 = React.createRef();
-    input4 = React.createRef();
+    state = {
+        nickname: "",
+        name: "",
+        lastname: "",
+        email: ""
+    }
+
+    onChange = e => {
+        //console.log(e.target);
+        //console.log(this.state);
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
 
     save = (event) => {
         // 1. Stop the form from submitting
         event.preventDefault();
-        // 2. get the dat from the inputs
-        console.log(this.input1.current.value);
-        console.log(this.input2.current.value);
-        console.log(this.input3.current.value);
-        console.log(this.input4.current.value);
-        // 3. trigger the event to save profile service
+        // 2. Build the object to be sended
+        // 3. Trigger the event to save profile service
     }
 
     render(){
         return (
-            <>
-            <h1> Profile </h1>
-            <form onSubmit={this.save}>
-                <label>Nickname</label>
-                <input ref={this.input1} type="text" required placeholder="Nickname" defaultValue="" />
-                <label>Name*</label>
-                <input ref={this.input2} type="text" required placeholder="Name" defaultValue="" />
-                <label>Lastname*</label>
-                <input ref={this.input3} type="text" required placeholder="Lastname" defaultValue=""/>
-                <label>Email</label>
-                <input ref={this.input4} type="email" placeholder="youtemail@host.com" defaultValue="" />
-                {/** Regarding the change of password maybe we could use allway google or facebook authorization */}
-                <div>
-                    <button type="submit"> Save/Update </button>
-                </div>        
-            </form>
-            </>
+            <div align="center" style={{ padding: "25px"}}>
+                <h1> Profile </h1>
+                <form onSubmit={this.save}>
+
+                    <Textfield                        
+                        name="nickname"
+                        value={this.state.nickname}
+                        onChange={(e) => {this.onChange(e)}}
+                        label="Nickname..."
+                        floatingLabel
+                        style={{width: '400px'}}                    
+                    />
+                    <br/>
+
+                    <Textfield
+                        required
+                        name="name"
+                        value={this.state.name}
+                        onChange={(e) => {this.onChange(e)}}
+                        label="Name..."
+                        floatingLabel
+                        style={{width: '400px'}}                    
+                    />
+                    <br/>
+                    
+                    <Textfield
+                        required
+                        name="lastname"
+                        value={this.state.lastname}
+                        onChange={(e) => {this.onChange(e)}}
+                        label="Lastname..."
+                        floatingLabel
+                        style={{width: '400px'}}                    
+                    />
+                    <br/>
+                    
+                    <Textfield
+                        required
+                        name="email"
+                        value={this.state.email}
+                        onChange={(e) => {this.onChange(e)}}
+                        label="Email..."
+                        floatingLabel
+                        style={{width: '400px'}}
+                        type="email"
+                    />
+                    <br/>
+
+                    {/** Regarding the change of password maybe we could use allway google or facebook authorization */}
+                    <div>
+                        <Button raised ripple type="submit">Save/Update</Button>
+                    </div>        
+                </form>
+            </div>
         )
     }
 }

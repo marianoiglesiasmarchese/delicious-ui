@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
+
+import "../../css/swiperElement.css";
+
 // Importing external functions
 // import { throwAlert } from '../../Utils';
 import { withRouter } from 'react-router-dom';
@@ -36,16 +39,15 @@ class SwiperElement extends React.Component {
     // this allows us to extract parts of the object recived througth props and to use them calling these attibutes 
     const { title, description, image } = this.props.recipe;
     return (
-        <div onClick={this.clickMe}>
+        <div onClick={this.clickMe} className="container" >
           {/** <div onClick={this.callEvent()}></div> => if we use the parentesis we are calling the method when the app starts, this behavior respons upper question */}
             
-          <h4> {title} </h4>
+          <h4 className="top-left" > {title} </h4>
 
-          <img className="swiper-lazy" ref={this.imageRef} alt={title} data-src={image} width="1280" height="600" />          
+          {/** here we should show the appropiate image for the current display */}
+          <img ref={this.imageRef} alt={title} src={image} width="1280" height="600" />          
           
-          <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
-          
-          <p> {description} </p>
+          <p className="bottom-left" > {description} </p>
 
         </div>
     );

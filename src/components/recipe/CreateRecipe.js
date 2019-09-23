@@ -1,44 +1,88 @@
 import React from "react";
 
+import { Textfield, Button } from "react-mdl";
+
 class CreateRecipe extends React.Component{
 
-    input1 = React.createRef();
-    input2 = React.createRef();
-    input3 = React.createRef();
-    input4 = React.createRef();
+    state = {
+        name: "",
+        description: "",
+        photo: null,
+        socialNetwork: ""
+    }
+
+    onChange = e => {
+        //console.log(e.target);
+        //console.log(this.state);
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
 
     save = (event) => {
         // 1. Stop the form from submitting
         event.preventDefault();
-        // 2. get the dat from the inputs
-        console.log(this.input1.current.value);
-        console.log(this.input2.current.value);
-        console.log(this.input3.current.value);
-        console.log(this.input4.current.value);
-        // 3. trigger the event to save recipe service
+        // 2. Build the object to be sended
+        // 3. Trigger the event to save recipe service
     }
 
     render(){
         return (
-            <>
-            <h1> New recipe </h1>
-            <form onSubmit={this.save}>
-                <label>Name*</label>
-                <input ref={this.input1} type="text" required placeholder="Name" defaultValue="" />
-                <label>Description*</label>
-                <input ref={this.input2} type="text" required placeholder="Description" defaultValue="" />
-                <label>Photo link*</label>
-                <input ref={this.input3} type="file" required />
-                <label>Social network source link</label>
-                <input ref={this.input4} type="link" placeholder="https://www.socialnetwork.com" defaultValue="" />
-                <div>
-                    <span>
-                        <button type="submit"> Save/Update </button>
-                        <button type="reset"> Clean form </button> 
-                    </span>
-                </div>        
-            </form>
-            </>
+            <div align="center" style={{ padding: "25px"}}>
+                <h1> New recipe </h1>
+
+                <form onSubmit={this.save}>
+                    
+                    <Textfield
+                        required
+                        name="name"
+                        value={this.state.name}
+                        onChange={(e) => {this.onChange(e)}}
+                        label="Name..."
+                        floatingLabel
+                        style={{width: '400px'}}                    
+                    />
+                    <br/>
+
+                    <Textfield
+                        required
+                        name="description"
+                        value={this.state.description}
+                        onChange={(e) => {this.onChange(e)}}
+                        label="Description..."
+                        floatingLabel
+                        rows={5}
+                        style={{width: '400px'}}
+                    />
+                    <br/>
+
+                    <Textfield
+                        required
+                        name="photo"
+                        onChange={(e) => {this.onChange(e)}}
+                        label="Recipe photo..."
+                        floatingLabel
+                        style={{width: '400px'}}
+                        type="file"
+                    />
+                    <br/>
+
+                    <Textfield
+                        name="socialNetwork"
+                        value={this.state.socialNetwork}
+                        onChange={(e) => {this.onChange(e)}}
+                        label="Social network source link..."
+                        floatingLabel
+                        style={{width: '400px'}}
+                        type="link"
+                    />
+                    <br/>
+                    
+                    <div>
+                        <Button raised ripple type="submit">Save/Update</Button>
+                    </div>        
+                </form>
+            </div>
         )
     }
 }
